@@ -7,19 +7,112 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security.Cryptography;
+using System.IO;
 
 namespace Hasharp
 {
     public partial class Hasharp : Form
     {
+        string wordlist;
         public Hasharp()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void sha256_click(object sender, EventArgs e)
         {
+            var inputHash = hashText.Text.ToLower();
+            StreamReader stream = new StreamReader(wordlist);
+            var x = 0;
+            for (var i = stream.ReadLine(); i != null; i = stream.ReadLine())
+            {
+                logTextBox.AppendText(Environment.NewLine + x + " | Attempting... | " + i);
+                if (CreateSHA256(i).ToLower() == inputHash)
+                {
+                    logTextBox.AppendText(Environment.NewLine + x + " | Match Found! | " + i);
+                    break;
+                }
+                x++;
+            }
+        }
 
+        private void sha1_click(object sender, EventArgs e)
+        {
+            var inputHash = hashText.Text.ToLower();
+            StreamReader stream = new StreamReader(wordlist);
+            var x = 0;
+            for (var i = stream.ReadLine(); i != null; i = stream.ReadLine())
+            {
+                logTextBox.AppendText(Environment.NewLine + x + " | Attempting... | " + i);
+                if (CreateSHA1(i).ToLower() == inputHash)
+                {
+                    logTextBox.AppendText(Environment.NewLine + x + " | Match Found! | " + i);
+                    break;
+                }
+                x++;
+            }
+        }
+
+        private void md5_click(object sender, EventArgs e)
+        {
+            var inputHash = hashText.Text.ToLower();
+            StreamReader stream = new StreamReader(wordlist);
+            var x = 0;
+            for (var i = stream.ReadLine(); i != null; i = stream.ReadLine())
+            {
+                logTextBox.AppendText(Environment.NewLine + x + " | Attempting... | " + i);
+                if (CreateMD5(i).ToLower() == inputHash)
+                {
+                    logTextBox.AppendText(Environment.NewLine + x + " | Match Found! | " + i);
+                    break;
+                }
+                x++;
+            }
+        }
+        static string CreateMD5(string x)
+        {
+            var convertTmp = Encoding.Default.GetBytes(x);
+            MD5 md5 = MD5.Create();
+            var hashBytes = md5.ComputeHash(convertTmp);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("X2"));
+            }
+            return sb.ToString().ToLower();
+        }
+        static string CreateSHA1(string x)
+        {
+            var convertTmp = Encoding.Default.GetBytes(x);
+            SHA1 sha1 = SHA1.Create();
+            var hashBytes = sha1.ComputeHash(convertTmp);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("X2"));
+            }
+            return sb.ToString().ToLower();
+        }
+        static string CreateSHA256(string x)
+        {
+            var convertTmp = Encoding.Default.GetBytes(x.ToString());
+            SHA256 sha256 = SHA256.Create();
+            var hashBytes = sha256.ComputeHash(convertTmp);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("X2"));
+            }
+            return sb.ToString().ToLower();
+        }
+
+        private void selectFileButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog saveFileDialog = new OpenFileDialog();
+            saveFileDialog.ShowDialog();
+            wordlist = saveFileDialog.FileName;
+            logTextBox.Text = logTextBox.Text + "\nwordlist selected: " + wordlist;
         }
     }
 }
