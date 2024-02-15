@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hasharp));
             this.sha256button = new System.Windows.Forms.Button();
             this.sha1Button = new System.Windows.Forms.Button();
             this.md5Button = new System.Windows.Forms.Button();
@@ -118,7 +117,6 @@
             // 
             // logLabel
             // 
-            this.logLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.logLabel.AutoSize = true;
             this.logLabel.Location = new System.Drawing.Point(122, 294);
             this.logLabel.Name = "logLabel";
@@ -128,7 +126,6 @@
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.button1.Location = new System.Drawing.Point(126, 143);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 26);
@@ -150,7 +147,6 @@
             this.Controls.Add(this.md5Button);
             this.Controls.Add(this.sha1Button);
             this.Controls.Add(this.sha256button);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(897, 514);
             this.Name = "Hasharp";
             this.Text = "Hasharp";
