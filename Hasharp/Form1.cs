@@ -14,6 +14,7 @@ using System.Runtime.CompilerServices;
 
 namespace Hasharp
 {
+    // hello world!
     public partial class Hasharp : Form
     {
         string wordlist;
