@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Security.Cryptography;
 using System.IO;
+using System.Threading;
+using System.Runtime.CompilerServices;
 
 namespace Hasharp
 {
@@ -17,6 +19,7 @@ namespace Hasharp
         string wordlist;
         public Hasharp()
         {
+            
             InitializeComponent();
         }
 
@@ -27,10 +30,10 @@ namespace Hasharp
             var x = 0;
             for (var i = stream.ReadLine(); i != null; i = stream.ReadLine())
             {
-                logTextBox.AppendText(Environment.NewLine + x + " | Attempting... | " + i);
+                logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Attempting... | " + i);
                 if (CreateSHA256(i).ToLower() == inputHash)
                 {
-                    logTextBox.AppendText(Environment.NewLine + x + " | Match Found! | " + i);
+                    logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Match Found! | " + i);
                     break;
                 }
                 x++;
@@ -44,10 +47,10 @@ namespace Hasharp
             var x = 0;
             for (var i = stream.ReadLine(); i != null; i = stream.ReadLine())
             {
-                logTextBox.AppendText(Environment.NewLine + x + " | Attempting... | " + i);
+                logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Attempting... | " + i);
                 if (CreateSHA1(i).ToLower() == inputHash)
                 {
-                    logTextBox.AppendText(Environment.NewLine + x + " | Match Found! | " + i);
+                    logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Match Found! | " + i);
                     break;
                 }
                 x++;
@@ -61,10 +64,10 @@ namespace Hasharp
             var x = 0;
             for (var i = stream.ReadLine(); i != null; i = stream.ReadLine())
             {
-                logTextBox.AppendText(Environment.NewLine + x + " | Attempting... | " + i);
+                logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Attempting... | " + i);
                 if (CreateMD5(i).ToLower() == inputHash)
                 {
-                    logTextBox.AppendText(Environment.NewLine + x + " | Match Found! | " + i);
+                    logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Match Found! | " + i);
                     break;
                 }
                 x++;
@@ -113,6 +116,11 @@ namespace Hasharp
             saveFileDialog.ShowDialog();
             wordlist = saveFileDialog.FileName;
             logTextBox.Text = logTextBox.Text + "\nwordlist selected: " + wordlist;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
