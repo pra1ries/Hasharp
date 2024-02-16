@@ -1,12 +1,12 @@
 # To Do
 
 ## High Priority
-- [ ]  Make hashing run asynchronously so that you can still interact with the window during attempts.
-- [ ]  Find and eliminate user-induced runtime errors.
-- [ ]  Somehow increase the rate at which Hasharp attempts to crack a hash. (Multithreading?)
+- [ ] Make hashing run asynchronously so that you can still interact with the window during attempts.
+- [ ] Find and eliminate user-induced runtime errors.
+- [ ] Somehow increase the rate at which Hasharp attempts to crack a hash. (Multithreading?)
 
 ## Medium Priority
-- [ ]  Default to GPU as opposed to running on the CPU.
+- [ ] Default to GPU as opposed to running on the CPU.
 
 ## Low Priority
-- [ ]  UI v2
+- [ ] UI v2
