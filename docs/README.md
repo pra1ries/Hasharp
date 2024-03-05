@@ -9,3 +9,7 @@ You can download Hasharp [here!](https://github.com/pra1ries/hasharp/releases/la
 ## To-Do Page
 
 You can view the to-do page [here!](todo)
+
+## Supported Algorithms
+
+You can view the algorithms that Hasharp supports [here!](supportedalgorithms)
