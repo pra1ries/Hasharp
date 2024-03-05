@@ -4,8 +4,8 @@ Open-source GUI-based wordlist attack utilizing C# and the .NET framework.
 
 ## Download
 
-You can download Hasharp [here!](https://github.com/pra1ries/Hasharp/releases/latest)
+You can download Hasharp [here!](https://github.com/pra1ries/hasharp/releases/latest)
 
 ## To-Do Page
 
-You can view the to-do page [here!](https://dev.hellocorb.in/Hasharp/todo)
+You can view the to-do page [here!](https://dev.hellocorb.in/hasharp/todo)
