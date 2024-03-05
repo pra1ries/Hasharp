@@ -8,4 +8,4 @@ You can download Hasharp [here!](https://github.com/pra1ries/hasharp/releases/la
 
 ## To-Do Page
 
-You can view the to-do page [here!](https://dev.hellocorb.in/hasharp/todo)
+You can view the to-do page [here!](todo)
