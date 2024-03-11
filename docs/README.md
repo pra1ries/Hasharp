@@ -17,4 +17,4 @@ You can view the algorithms that Hasharp supports [here!](supportedalgorithms)
 
 ## Suggestions
 
-Have a suggestion? Create an issue [here](https://github.com/pra1ries/hasharp/issues) using the "enhancement" tag!
+Have a suggestion? Create an issue [here](https://github.com/pra1ries/hasharp/issues) and use the "enhancement" tag!
