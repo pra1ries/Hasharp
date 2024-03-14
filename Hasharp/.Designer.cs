@@ -38,13 +38,14 @@
             this.logTextBox = new System.Windows.Forms.TextBox();
             this.logLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.algSelectionBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // sha256button
             // 
             this.sha256button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sha256button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sha256button.Location = new System.Drawing.Point(122, 202);
+            this.sha256button.Location = new System.Drawing.Point(459, 233);
             this.sha256button.Name = "sha256button";
             this.sha256button.Size = new System.Drawing.Size(91, 78);
             this.sha256button.TabIndex = 0;
@@ -56,7 +57,7 @@
             // 
             this.sha1Button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sha1Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sha1Button.Location = new System.Drawing.Point(219, 202);
+            this.sha1Button.Location = new System.Drawing.Point(556, 233);
             this.sha1Button.Name = "sha1Button";
             this.sha1Button.Size = new System.Drawing.Size(91, 78);
             this.sha1Button.TabIndex = 1;
@@ -69,7 +70,7 @@
             this.md5Button.AllowDrop = true;
             this.md5Button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.md5Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.md5Button.Location = new System.Drawing.Point(316, 202);
+            this.md5Button.Location = new System.Drawing.Point(664, 233);
             this.md5Button.Name = "md5Button";
             this.md5Button.Size = new System.Drawing.Size(91, 78);
             this.md5Button.TabIndex = 2;
@@ -137,10 +138,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.selectFileButton_Click);
             // 
+            // algSelectionBox
+            // 
+            this.algSelectionBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.algSelectionBox.FormattingEnabled = true;
+            this.algSelectionBox.Items.AddRange(new object[] {
+            "MD5",
+            "SHA256",
+            "SHA1"});
+            this.algSelectionBox.Location = new System.Drawing.Point(126, 211);
+            this.algSelectionBox.Name = "algSelectionBox";
+            this.algSelectionBox.Size = new System.Drawing.Size(208, 28);
+            this.algSelectionBox.TabIndex = 10;
+            // 
             // Hasharp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(875, 558);
+            this.Controls.Add(this.algSelectionBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.logLabel);
             this.Controls.Add(this.logTextBox);
@@ -170,6 +185,7 @@
         private System.Windows.Forms.TextBox logTextBox;
         private System.Windows.Forms.Label logLabel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox algSelectionBox;
     }
 }
 
