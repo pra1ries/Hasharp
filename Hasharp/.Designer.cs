@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hasharp));
-            this.sha256button = new System.Windows.Forms.Button();
-            this.sha1Button = new System.Windows.Forms.Button();
-            this.md5Button = new System.Windows.Forms.Button();
             this.pathLabel = new System.Windows.Forms.Label();
             this.hashText = new System.Windows.Forms.TextBox();
             this.hashInputLabel = new System.Windows.Forms.Label();
@@ -40,43 +37,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.algSelectionBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
-            // 
-            // sha256button
-            // 
-            this.sha256button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sha256button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sha256button.Location = new System.Drawing.Point(459, 233);
-            this.sha256button.Name = "sha256button";
-            this.sha256button.Size = new System.Drawing.Size(91, 78);
-            this.sha256button.TabIndex = 0;
-            this.sha256button.Text = "SHA256";
-            this.sha256button.UseVisualStyleBackColor = true;
-            this.sha256button.Click += new System.EventHandler(this.sha256_click);
-            // 
-            // sha1Button
-            // 
-            this.sha1Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.sha1Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sha1Button.Location = new System.Drawing.Point(556, 233);
-            this.sha1Button.Name = "sha1Button";
-            this.sha1Button.Size = new System.Drawing.Size(91, 78);
-            this.sha1Button.TabIndex = 1;
-            this.sha1Button.Text = "SHA1";
-            this.sha1Button.UseVisualStyleBackColor = true;
-            this.sha1Button.Click += new System.EventHandler(this.sha1_click);
-            // 
-            // md5Button
-            // 
-            this.md5Button.AllowDrop = true;
-            this.md5Button.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.md5Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.md5Button.Location = new System.Drawing.Point(664, 233);
-            this.md5Button.Name = "md5Button";
-            this.md5Button.Size = new System.Drawing.Size(91, 78);
-            this.md5Button.TabIndex = 2;
-            this.md5Button.Text = "MD5";
-            this.md5Button.UseVisualStyleBackColor = true;
-            this.md5Button.Click += new System.EventHandler(this.md5_click);
             // 
             // pathLabel
             // 
@@ -162,9 +122,6 @@
             this.Controls.Add(this.hashInputLabel);
             this.Controls.Add(this.hashText);
             this.Controls.Add(this.pathLabel);
-            this.Controls.Add(this.md5Button);
-            this.Controls.Add(this.sha1Button);
-            this.Controls.Add(this.sha256button);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(897, 514);
             this.Name = "Hasharp";
@@ -175,10 +132,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button sha256button;
-        private System.Windows.Forms.Button sha1Button;
-        private System.Windows.Forms.Button md5Button;
         private System.Windows.Forms.Label pathLabel;
         private System.Windows.Forms.TextBox hashText;
         private System.Windows.Forms.Label hashInputLabel;
