@@ -23,7 +23,7 @@ namespace Hasharp
             InitializeComponent();
         }
 
-        private void sha256_crack(object sender, EventArgs e)
+        private void sha256_crack()
         {
             var inputHash = hashText.Text.ToLower();
             StreamReader stream = new StreamReader(wordlist);
@@ -40,7 +40,7 @@ namespace Hasharp
             }
         }
 
-        private void sha1_crack(object sender, EventArgs e)
+        private void sha1_crack()
         {
             var inputHash = hashText.Text.ToLower();
             StreamReader stream = new StreamReader(wordlist);
@@ -121,6 +121,20 @@ namespace Hasharp
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (algSelectionBox.Text == "MD5")
+            {
+                md5_crack();
+            } else if (algSelectionBox.Text == "SHA256")
+            {
+                sha256_crack();
+            } else if (algSelectionBox.Text == "SHA1")
+            {
+                sha1_crack();
+            }
         }
     }
 }

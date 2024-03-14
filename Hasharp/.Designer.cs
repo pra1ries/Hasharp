@@ -36,6 +36,7 @@
             this.logLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.algSelectionBox = new System.Windows.Forms.ComboBox();
+            this.startButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pathLabel
@@ -111,10 +112,21 @@
             this.algSelectionBox.Size = new System.Drawing.Size(208, 28);
             this.algSelectionBox.TabIndex = 10;
             // 
+            // startButton
+            // 
+            this.startButton.Location = new System.Drawing.Point(507, 204);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(153, 40);
+            this.startButton.TabIndex = 11;
+            this.startButton.Text = "Start Cracking!";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.button2_Click_1);
+            // 
             // Hasharp
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(875, 558);
+            this.Controls.Add(this.startButton);
             this.Controls.Add(this.algSelectionBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.logLabel);
@@ -139,6 +151,7 @@
         private System.Windows.Forms.Label logLabel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox algSelectionBox;
+        private System.Windows.Forms.Button startButton;
     }
 }
 
