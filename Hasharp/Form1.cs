@@ -118,11 +118,6 @@ namespace Hasharp
             logTextBox.Text = logTextBox.Text + "\nwordlist selected: " + wordlist;
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             if (algSelectionBox.Text == "MD5")
