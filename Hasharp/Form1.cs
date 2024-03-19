@@ -16,6 +16,10 @@ namespace Hasharp
 {
     public partial class Hasharp : Form
     {
+        SHA256 sha256 = SHA256.Create();
+        MD5 md5 = MD5.Create();
+        SHA1 sha1 = SHA1.Create();
+
         string wordlist;
         public Hasharp()
         {
@@ -76,7 +80,6 @@ namespace Hasharp
         static string CreateMD5(string x)
         {
             var convertTmp = Encoding.Default.GetBytes(x);
-            MD5 md5 = MD5.Create();
             var hashBytes = md5.ComputeHash(convertTmp);
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < hashBytes.Length; i++)
@@ -88,7 +91,6 @@ namespace Hasharp
         static string CreateSHA1(string x)
         {
             var convertTmp = Encoding.Default.GetBytes(x);
-            SHA1 sha1 = SHA1.Create();
             var hashBytes = sha1.ComputeHash(convertTmp);
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < hashBytes.Length; i++)
@@ -100,7 +102,6 @@ namespace Hasharp
         static string CreateSHA256(string x)
         {
             var convertTmp = Encoding.Default.GetBytes(x.ToString());
-            SHA256 sha256 = SHA256.Create();
             var hashBytes = sha256.ComputeHash(convertTmp);
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < hashBytes.Length; i++)
