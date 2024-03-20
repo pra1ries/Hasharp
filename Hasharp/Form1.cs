@@ -116,12 +116,22 @@ namespace Hasharp
             OpenFileDialog saveFileDialog = new OpenFileDialog();
             saveFileDialog.ShowDialog();
             wordlist = saveFileDialog.FileName;
-            logTextBox.Text = logTextBox.Text + "\nwordlist selected: " + wordlist;
+            if (wordlist == null)
+            {
+                logTextBox.Text = logTextBox.Text + "\nPlease input a file!" + wordlist;
+            } else
+            {
+                logTextBox.Text = logTextBox.Text + "\nwordlist selected: " + wordlist;
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
-        {
-            if (algSelectionBox.Text == "MD5")
+        {   
+            if (hashText.Text == "")
+            {
+                logTextBox.Text = logTextBox.Text + Environment.NewLine + "You did not input a hash!";
+
+            }else if (algSelectionBox.Text == "MD5")
             {
                 md5_crack();
             } else if (algSelectionBox.Text == "SHA256")
@@ -130,6 +140,9 @@ namespace Hasharp
             } else if (algSelectionBox.Text == "SHA1")
             {
                 sha1_crack();
+            } else
+            {
+                logTextBox.Text = logTextBox.Text + Environment.NewLine + "Not a valid option!";
             }
         }
     }
