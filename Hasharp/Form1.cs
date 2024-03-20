@@ -77,7 +77,7 @@ namespace Hasharp
                 x++;
             }
         }
-        static string CreateMD5(string x)
+        string CreateMD5(string x)
         {
             var convertTmp = Encoding.Default.GetBytes(x);
             var hashBytes = md5.ComputeHash(convertTmp);
@@ -88,7 +88,7 @@ namespace Hasharp
             }
             return sb.ToString().ToLower();
         }
-        static string CreateSHA1(string x)
+        string CreateSHA1(string x)
         {
             var convertTmp = Encoding.Default.GetBytes(x);
             var hashBytes = sha1.ComputeHash(convertTmp);
@@ -99,7 +99,7 @@ namespace Hasharp
             }
             return sb.ToString().ToLower();
         }
-        static string CreateSHA256(string x)
+        string CreateSHA256(string x)
         {
             var convertTmp = Encoding.Default.GetBytes(x.ToString());
             var hashBytes = sha256.ComputeHash(convertTmp);
