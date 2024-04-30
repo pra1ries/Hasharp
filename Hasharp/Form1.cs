@@ -11,14 +11,15 @@ using System.Security.Cryptography;
 using System.IO;
 using System.Threading;
 using System.Runtime.CompilerServices;
+using System.Diagnostics;
 
 namespace Hasharp
 {
     public partial class Hasharp : Form
     {
-        SHA256 sha256 = SHA256.Create();
-        MD5 md5 = MD5.Create();
-        SHA1 sha1 = SHA1.Create();
+        readonly SHA256 sha256 = SHA256.Create();
+        readonly MD5 md5 = MD5.Create();
+        readonly SHA1 sha1 = SHA1.Create();
 
         string wordlist;
         public Hasharp()
@@ -27,24 +28,27 @@ namespace Hasharp
             InitializeComponent();
         }
 
-        private void sha256_crack()
+        public void sha256_crack()
         {
             var inputHash = hashText.Text.ToLower();
             StreamReader stream = new StreamReader(wordlist);
             var x = 0;
+            Stopwatch timer = Stopwatch.StartNew();
             for (var i = stream.ReadLine(); i != null; i = stream.ReadLine())
             {
                 logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Attempting... | " + i);
                 if (CreateSHA256(i).ToLower() == inputHash)
                 {
-                    logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Match Found! | " + i);
+                    decimal hashesPerSecond = x / (timer.ElapsedMilliseconds / 1000);
+                    timer.Stop();
+                    logTextBox.AppendText(Environment.NewLine + "Attempt #" + x + " | Match Found! | " + i + " | hashes per second: " + hashesPerSecond);
                     break;
                 }
                 x++;
             }
         }
 
-        private void sha1_crack()
+        public void sha1_crack()
         {
             var inputHash = hashText.Text.ToLower();
             StreamReader stream = new StreamReader(wordlist);
@@ -61,7 +65,7 @@ namespace Hasharp
             }
         }
 
-        private void md5_crack()
+        public void md5_crack()
         {
             var inputHash = hashText.Text.ToLower();
             StreamReader stream = new StreamReader(wordlist);
@@ -110,7 +114,6 @@ namespace Hasharp
             }
             return sb.ToString().ToLower();
         }
-
         private void selectFileButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog saveFileDialog = new OpenFileDialog();
